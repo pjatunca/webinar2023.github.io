@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="estilos-login.css">
+</head>
+<body>
+  <div class="conteiner">
+    <h1 class="container-title" id="container_title">Ingreso al sistema</h1>
+    <nav class="navbar" id="navbar">
+      <button class="navbar-button navbar-button-selected" id="button_login">Ingresar</button>
+      <button class="navbar-button" id="button_register">Registrar</button>
+    </nav>
+    <div class="conteiner-forms">
+      <form class="form" id="form_login">
+        <div class="form__box">
+          <input type="text" class="form__input" 
+            placeholder="Usuario">
+          <i class="form__icon-input fa-solid fa-user"></i>
+        </div>
+        <div class="form__box">
+          <input
+            type="password"
+            class="form__input"
+            placeholder="Contraseña">
+          <i class="form__icon-input fa-solid fa-lock"></i>
+        </div>
+        <button class="btn btn-primary">Ingresar</button>
+      </form>
+      <form class="form form-hidden" id="form_register">
+          <div class="form__box">
+            <input type="text" class="form__input" 
+              placeholder="Nuevo Usuario">
+            <i class="form__icon-input fa-solid fa-user"></i>
+          </div>
+          <div class="form__box">
+            <input
+              type="password"
+              class="form__input"
+              placeholder="Ingrese Contraseña">
+            <i class="form__icon-input fa-solid fa-lock"></i>
+          </div>
+          <button class="btn btn-primary">Registrar</button>
+        </form>
+    </div>
+  </div>
+</body>
+<script>
+  const navbar = document.getElementById('navbar')
+  const form_login = document.getElementById('form_login')
+  const form_register = document.getElementById('form_register')
+  const container_title = document.getElementById('container_title')
+  const button_login=document.getElementById('button_login')
+  const button_register=document.getElementById('button_register')
+  let state = true;
+
+  navbar.addEventListener('click', (e) => {
+    if (e.target.classList.contains('navbar-button')) {
+      if (state) {
+          form_login.classList.add('form-hidden')
+          form_register.classList.remove('form-hidden')
+          button_login.classList.remove('navbar-button-selected')
+          button_register.classList.add('navbar-button-selected')
+          container_title.textContent = 'Registro de datos'
+          state = false
+          return
+      } 
+      form_login.classList.remove('form-hidden')
+      form_register.classList.add('form-hidden')
+      button_login.classList.add('navbar-button-selected')
+      button_register.classList.remove('navbar-button-selected')
+      container_title.textContent = 'Ingreso al sistema'
+      state = true 
+    }
+  })
+</script>
+</html>

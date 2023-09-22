@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+  }
+  .conteiner {
+    width: 30%;
+    background-color: #fff;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin: 30px auto;
+    text-align: center;
+    padding: 1.3em;
+  }
+  .navbar {
+    width: 95%;
+    display: flex;
+    margin: 2em auto;
+    border-radius: 0.2em;
+    overflow: hidden;
+    margin-bottom: 2em;
+    border: 1px solid #ccc;
+  }
+  .navbar-button {
+    width: 50%;
+    padding: .8em 0;
+    color: #111;
+    font-weight: bold;
+    background-color: #fff;
+  }
+  .navbar-button-selected {
+    background-color: blue;
+    color: #fff;
+  }
+  .conteiner-forms {
+    position: relative;
+    height: 250px;
+    width: 95%;
+    margin: 0 auto;
+  }
+  .form {
+    position: absolute;
+    width: 100%;
+  }
+  .form__box {
+    border: 1px solid #ccc;
+    border-radius: 0.2em;
+    margin-bottom: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.7em;
+  }
+  .form__input {
+    padding: 0.8em 0;
+    width: 90%;
+  }
+  .form__icon-input {
+    color: #ccc;
+  }
+  .form__button {
+    width: 100%;
+    background-color: blue;
+    color: #fff;
+    padding: 1em 0;
+    margin: 1.5em 0 5em;
+    border-radius: 0.2em;
+    font-weight: bold;
+  }
+  .form-hidden {
+    display: none;
+  }
+  button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  input {
+    border: none;
+    outline: none;
+  }
+  
+  
+  @media (max-width: 810px) {
+    .conteiner {
+      width: 50%;
+    }
+  }
+  @media (max-width: 480px) {
+    .conteiner {
+      width: 90%;
+    }
+  }

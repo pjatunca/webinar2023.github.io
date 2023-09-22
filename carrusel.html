@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    /> 
+    <link rel="stylesheet" href="estilos-carrusel.css">
+</head>
+<body>
+    <div class="parent flex" id="parent">
+        
+        <div class="cont-slider">
+            <div class="box one"></div>
+            <div class="box two"></div>
+            <div class="box three"></div>
+            <div class="box four"></div>
+            <div class="box five"></div>
+        </div>
+      <div class="content-arrow">
+        <span class="previous"><i class="previous flex fas fa-arrow-left"></i></span>
+        <span class="next"><i class="next fas fa-arrow-right"></i></span>
+      </div>
+    </div>
+</body>
+<script>
+    const box = document.querySelectorAll('.box')
+    const anterior = document.querySelectorAll('.previous')[0]
+    const siguiente = document.querySelectorAll('.next')[0]
+    let count = 0;
+
+    anterior.addEventListener('click', (e) => {
+        e.stopPropagation()
+        if (count < box.length - 1) {
+            box[count].classList.add('translate')
+            count += 1;
+        }
+    })
+
+    siguiente.addEventListener('click', (e) => {
+        e.stopPropagation()  
+        if (count !== 0) {
+            count -= 1;
+            box[count].classList.remove('translate')
+        }
+    })
+    
+</script>
+</html>

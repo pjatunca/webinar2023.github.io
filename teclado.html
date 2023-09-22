@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo-teclado.css">
+</head>
+<body>
+    <div class="contenedor bb-blanco" id="contenedor">
+        <img class="cabeza" src="https://res.cloudinary.com/diz8ym76r/image/upload/v1603239839/imagenes%20de%20bb-8/CABEZA_lfewgs.png"  alt="" />
+        <img class="cuerpo" src="https://res.cloudinary.com/diz8ym76r/image/upload/v1603239871/imagenes%20de%20bb-8/CUERPO_eh8gmr.png" alt="" id="cuerpo" />
+        <div class="sombra"></div>
+      </div>
+</body>
+<script>
+  let contenedor = document.getElementById("contenedor");
+  let cuerpo = document.getElementById("cuerpo");
+  let valor = 0;
+  let valor2 = 0;
+
+  /*
+  document.body.addEventListener("keydown", (e) => {
+    let tecla = e.key;
+      
+    switch (tecla) {
+      case "ArrowRight":
+        valor += 100;
+        valor2 += 150;
+        contenedor.style.transform = `translateX(${valor}px)`;
+        cuerpo.style.transform = `rotate(${valor2}deg)`;
+        break;
+      case "ArrowLeft":
+        valor -= 100;
+        valor2 -= 150;
+        contenedor.style.transform = `translateX(${valor}px)`;
+        cuerpo.style.transform = `rotate(${valor2}deg)`;
+        break;
+
+      default:
+        console.log(tecla)
+        break;
+    }
+  }); 
+  */
+
+
+  
+  document.body.addEventListener('mousemove',(e)=>{
+    let valor=e.clientX
+    let x = e.clientX;     
+    let y = e.clientY;     
+    console.log("X coords: " + x + ", Y coords: " + y);
+    contenedor.style.transform=`translateX(${valor}px)`
+    cuerpo.style.transform=`rotate(${valor}deg)`
+  });
+  
+</script>
+</html>

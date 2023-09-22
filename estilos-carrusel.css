@@ -1,0 +1,81 @@
+body {
+    overflow: hidden;
+    cursor: pointer;
+    margin: 0;
+    background-color: skyblue;
+  }
+  
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .parent {
+    height: 100vh;
+    width: 100%;
+  position:relative;
+  }
+  
+  .cont-slider {
+    height: 450px;
+    width: 65%;
+    overflow: hidden;
+    display: flex;
+    margin: 0 1em;
+    box-shadow: 0 8px 8px #222;
+  border-radius:5px;
+     position:absolute;
+  }
+  
+  .box {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    transition: .5s ease-in-out;
+    background-position: bottom;
+    
+  }
+  
+  .one {
+    background-image: url("https://media.istockphoto.com/id/559537925/es/foto/farmac%C3%A9utico-surtiendo-receta-en-farmacia.jpg?s=2048x2048&w=is&k=20&c=gjVnsELV61Qkc-uRJ1_fL5aHS9vqZUjowBsSs8NkrTc=");
+  }
+  
+  .two {
+    background-image: url("https://media.istockphoto.com/id/559537791/es/foto/farmac%C3%A9utico-y-cliente-revisando-la-etiqueta-en-la-caja-de-la-farmacia.jpg?s=2048x2048&w=is&k=20&c=hyPGVDRXn-4_4hO2h3fK2w-iLAv_7nK2glkDcsUSKCk=");
+  }
+  
+  .three {
+    background-image: url("https://media.istockphoto.com/id/1305266403/es/foto/farmac%C3%A9utico-con-una-m%C3%A1scara-protectora-toma-una-caja-con-un-nuevo-medicamento.jpg?s=2048x2048&w=is&k=20&c=V8lxzea8VwzrFqyEIVLdREPP20GR9faJ5ZVweB4nPio=");
+  }
+  
+  .four {
+    background-image: url("https://media.istockphoto.com/id/1325914578/es/foto/retrato-de-farmac%C3%A9utico-negro-profesional-utiliza-tableta-digital-comprueba-el-inventario-de.jpg?s=2048x2048&w=is&k=20&c=2Pn-bVHQol-eJmSuuIv40V2_Y6KV9s-1p5df3G12D8U=");
+  }
+  
+  .five {
+    background-image: url("https://media.istockphoto.com/id/1325914571/es/foto/hermoso-farmac%C3%A9utico-cauc%C3%A1sico-utiliza-tableta-digital-comprueba-el-inventario-de-medicamentos.jpg?s=2048x2048&w=is&k=20&c=uhFXvpppaOTXdIv1IHm5yXKJAVtMKFGZLsWqg55oq1k=");
+  }
+  
+  .content-arrow{
+    position:absolute;
+    width:60%;
+    display:flex;
+    justify-content:space-between;
+  }
+  span {
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 8px #222;
+  }
+  
+  .translate {
+    margin-left: -100%;
+  }

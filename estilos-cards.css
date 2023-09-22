@@ -1,0 +1,121 @@
+body{
+    background-color: #040119;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont-padre{
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor{
+   overflow: hidden;
+    height: 450px;
+    width: 21%;
+    margin: 0 15px;
+}
+.contenedor img{
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 3px;
+}
+.box-datos{
+    height: 235px;
+    width: 100%;
+    margin: auto;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: .4s;
+}
+.box-datos h1{
+    font-size: 1em;
+    color: var(--color1);
+    margin-bottom: -2px;
+}
+.box-datos h2{
+    font-size: .8em;
+    color:var(--color1);
+}
+.box-datos h1, h2{
+    font-family: sans-serif;
+    text-align: center;
+}
+.box-datos p{
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    width: 80%;
+    color: var(--color1);
+}
+.box-datos span{
+    margin: 0 20px;
+    font-size: 1.2em;
+}
+span:nth-child(1){
+    color: #3b5998;
+}
+span:nth-child(2){
+    color: #55acee;
+}
+span:nth-child(3){
+    color: #bb0000;
+}
+.contenedor:hover .box-datos{
+    transform: translateY(-160px);
+}
+@media screen and (max-width:1024px){
+    .contenedor{
+        width: 30%;
+        margin: 15px;
+    }
+}
+@media screen and (max-width:800px){
+    .contenedor{
+        width: 50%;
+        margin: 15px;
+    }
+}
+@media screen and (max-width:768px){
+    .contenedor{
+        width: 40%;
+        margin: 15px;
+    }
+}
+@media screen and (max-width:600px){
+    .contenedor{
+        width: 55%;
+        margin: 20px 10px;
+    }    
+}
+@media screen and (max-width:360px){
+    .contenedor{
+        width: 100%;
+        margin: 20px 0;
+    }
+    .contenedor h1{
+        margin-top: -10px;
+    }
+}
+@media screen and (max-width:414px){
+    .contenedor{
+        width: 100%;
+        margin: 20px 0;
+    }
+    .contenedor h1{
+        margin-top: -10px;
+    }
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos-catalogo.css">
+</head>
+<body>
+    <nav id="nav" class="p-2 w-100 d-flex justify-content-center  bg-dark mb-5">
+        <button class="todos mx-3 btn btn-primary" data-categoria="todos">Todos</button>
+        <button class="button mx-3 btn btn-primary" data-categoria="bebidas">Bebidas</button>
+        <button class="button mx-3 btn btn-primary" data-categoria="electro">Electro</button>
+        <button class="button mx-3 btn btn-primary" data-categoria="abarrotes">Abarrotes</button>
+    </nav>
+ <select class="form-select w-50 m-auto mb-5 text-center" id="select">
+      <option class="select" value="todos">Todos</option>
+      <option class="select" value="bebidas">Bebidas</option>
+      <option class="select" value="abarrotes">Abarrotes</option>
+      <option class="select" value="electro">Electro</option>
+    </select>
+    <div class="contenedor d-flex flex-wrap p-2" id="contenedor">
+
+    </div>
+</body>
+<script>
+    const ListProducts = [
+    {
+        name: 'Inca Kola',
+        img: 'https://elpozito.com.pe/tienda/sanisidro/wp-content/uploads/2020/07/311802.jpg',
+        categoria: 'bebidas'
+    },
+    {
+        name: 'Laptop HP',
+        img: 'https://plazavea.vteximg.com.br/arquivos/ids/27500650-1000-1000/null.jpg',
+        categoria: 'electro'
+    },
+    {
+        name: 'Smartphone Samsung',
+        img: 'https://plazavea.vteximg.com.br/arquivos/ids/26396577-1000-1000/20256160.jpg',
+        categoria: 'electro'
+    },
+    {
+        name: 'Leche Gloria',
+        img: 'https://plazavea.vteximg.com.br/arquivos/ids/25967959-1000-1000/20345561.jpg',
+        categoria: 'abarrotes'
+    },
+    {
+        name: 'Coca Cola',
+        img: 'https://elpozito.com.pe/tienda/dosdemayo/wp-content/uploads/2020/07/310105-300x300.jpg',
+        categoria: 'bebidas'
+    },
+    { name: 'Atún Campomar',
+        img: 'https://plazavea.vteximg.com.br/arquivos/ids/25710953-1000-1000/20326488.jpg',
+        categoria: 'abarrotes'
+    },
+    { name: 'Atún Campomar',
+        img: 'https://plazavea.vteximg.com.br/arquivos/ids/25710953-1000-1000/20326488.jpg',
+        categoria: 'abarrotes'
+    },
+    { name: 'Atún Campomar',
+        img: 'https://plazavea.vteximg.com.br/arquivos/ids/25710953-1000-1000/20326488.jpg',
+        categoria: 'abarrotes'
+    },
+    { name: 'Atún Campomar',
+        img: 'https://plazavea.vteximg.com.br/arquivos/ids/25710953-1000-1000/20326488.jpg',
+        categoria: 'abarrotes'
+    },
+    { name: 'Atún Campomar',
+        img: 'https://plazavea.vteximg.com.br/arquivos/ids/25710953-1000-1000/20326488.jpg',
+        categoria: 'abarrotes'
+    },
+    { name: 'Atún Campomar',
+        img: 'https://plazavea.vteximg.com.br/arquivos/ids/25710953-1000-1000/20326488.jpg',
+        categoria: 'abarrotes'
+    },
+    { name: 'Atún Campomar',
+        img: 'https://plazavea.vteximg.com.br/arquivos/ids/25710953-1000-1000/20326488.jpg',
+        categoria: 'abarrotes'
+    },
+    { name: 'Lavadora LG carga superior 13Kg',
+        img: 'https://plazavea.vteximg.com.br/arquivos/ids/26947546-1000-1000/20139524.jpg',
+        categoria: 'electro'
+    },
+]
+
+const contenedor = document.getElementById('contenedor')
+const nav = document.getElementById('nav')
+const select = document.getElementById('select')
+
+const AddAll_Products = (list) => {
+    contenedor.innerHTML = ''
+    list.map(item => (
+        contenedor.innerHTML += `
+    <div class="card card-body mx-2 mb-3 text-center">
+        <img class="m-auto" src=${item.img} />
+        <p class="font-weigth btn btn-primary">${item.name}</p>
+    </div>`
+    ))
+}
+
+AddAll_Products(ListProducts);
+
+const FilterProducts = (categoria) => {
+    let product = ListProducts.filter(item => item.categoria === categoria)
+    contenedor.innerHTML = '';
+    AddAll_Products(product)
+}
+
+nav.addEventListener('click', (e) => {
+    if (e.target.classList.contains('button')) {
+        let categoria = e.target.dataset.categoria
+        FilterProducts(categoria)
+    } else {
+        AddAll_Products(ListProducts);
+    }
+})
+
+select.addEventListener('change', (e) => {
+    let value = e.target.value
+    value === 'todos' ? AddAll_Products(ListProducts) : FilterProducts(e.target.value)
+})
+
+</script>
+</html>
